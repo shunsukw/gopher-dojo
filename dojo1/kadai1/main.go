@@ -29,7 +29,7 @@ func convertExp(src string) {
 		os.Exit(1)
 	}
 
-	newFileName := replaceExt(src, ".jpeg", "png")
+	newFileName := replaceExt(src, ".jpeg", ".png")
 	fmt.Println("this is a new file name")
 	fmt.Println(newFileName)
 
@@ -67,9 +67,9 @@ func main() {
 			return nil
 		}
 
-		pos := strings.LastIndex(info.Name(), ".")
-		if info.Name()[pos:] == ".jpeg" {
-			convertExp(info.Name())
+		pos := strings.LastIndex(path, ".")
+		if path[pos:] == ".jpeg" {
+			convertExp(path)
 			return nil
 		}
 
